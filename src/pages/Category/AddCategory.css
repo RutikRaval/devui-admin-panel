@@ -1,0 +1,16 @@
+.addcategory-wrapper {
+  min-height: 100vh;
+}
+.addcategory-wrapper .outer-wrapper {
+  height: 100%;
+  width: 100%;
+}
+.addcategory-wrapper .inner-wrapper {
+  border-radius: 8px;
+  border: 1px solid rgb(179, 176, 176);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+input.is-invalid{
+    border-color: red;
+}

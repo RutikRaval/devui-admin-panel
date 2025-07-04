@@ -25,7 +25,7 @@ const Login = () => {
       const response = await loginApi(data)
       if (response?.success) {
         
-        toast.success(response.message)
+        toast.success(response?.message)
         sessionStorage.setItem("token", response?.token)
         sessionStorage.setItem("user",JSON.stringify(response?.data))
         navigate('/')

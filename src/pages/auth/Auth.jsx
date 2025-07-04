@@ -9,7 +9,6 @@ const Auth = ({ children }) => {
 
     useEffect(() => {
         const auth = getToken();
-        console.log(auth);
 
         if (!auth) {
             navigate('/unauthorised');
