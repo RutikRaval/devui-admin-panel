@@ -28,7 +28,7 @@ const Login = () => {
         toast.success(response?.message)
         sessionStorage.setItem("token", response?.token)
         sessionStorage.setItem("user",JSON.stringify(response?.data))
-        navigate('/')
+        navigate('/dashboard')
       }
     } catch (error) {
       toast.error(error)
