@@ -3,10 +3,10 @@ import { showAllCategory } from "../../services/categoryApi"
 
 const ShowCategory = () => {
 
-    const { data: cat, isError, isSuccess, isLoading } = useQuery({
+    const { data: data, isError, isSuccess, isLoading } = useQuery({
         queryKey: ["showCategory"],
         queryFn: showAllCategory,
-        // select: (data) => data.categories 
+        select: (data) => data.categories 
     });
     return (
         <section className='showCategory-wrapper'>
@@ -14,7 +14,7 @@ const ShowCategory = () => {
                 <h3>
                     All Categories
                 </h3>
-                {/* {isLoading && (<div>Loading...</div>)}
+                {isLoading && (<div>Loading...</div>)}
                 {isError && (<div>Error in Loading Data</div>)}
                 {
                     isSuccess && (
@@ -26,7 +26,7 @@ const ShowCategory = () => {
                             )
                         })
                     )
-                } */}
+                }
             </div>
         </section>
     )

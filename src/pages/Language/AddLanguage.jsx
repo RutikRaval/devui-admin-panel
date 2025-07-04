@@ -1,10 +1,10 @@
-import React from 'react'
 import './AddLanguage.css'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup'
 import toast from 'react-hot-toast'
 import { addLanguage } from '../../services/languageApi'
+import { useMutation } from '@tanstack/react-query'
 
 const validationSchema = yup.object({
     name: yup.string().required("Name is Required")
@@ -13,19 +13,20 @@ const AddLanguage = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(validationSchema)
     })
-
-    const onSubmit = async (data) => {
-        try {
-            const response = await addLanguage(data)
-            if (response.success) {
+    const mutation = useMutation({
+        mutationFn: addLanguage,
+        onSuccess: (response) => {
+            if (response?.success) {
                 toast.success(response?.message)
                 reset()
             }
-        } catch (error) {
-            console.log(error);
-            
+        },
+        onError: (error) => {
             toast.error(error)
         }
+    })
+    const onSubmit = (data) => {
+        mutation.mutate(data)
     }
     return (
         <section className='addlanguage-wrapper'>

@@ -1,5 +1,8 @@
 .addlanguage-wrapper {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .addlanguage-wrapper .outer-wrapper {
   height: 100%;
@@ -11,6 +14,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
-input.is-invalid{
-    border-color: red;
+input.is-invalid {
+  border-color: red;
 }

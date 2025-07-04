@@ -4,25 +4,31 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import toast from 'react-hot-toast'
 import { addCategory } from '../../services/categoryApi'
+import { useMutation } from '@tanstack/react-query'
 
 const validationSchema = yup.object({
     name: yup.string().required("Name is Required")
 })
 const AddCategory = () => {
-    const { register, handleSubmit, formState: { errors } ,reset} = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(validationSchema)
     })
 
-    const onSubmit = async (data) => {
-        try {
-            const response = await addCategory(data)
+    const mutation = useMutation({
+        mutationFn: addCategory,
+        onSuccess: (response) => {
             if (response?.success) {
                 toast.success(response?.message)
                 reset()
             }
-        } catch (error) {
+        },
+        onError: (error) => {
             toast.error(error)
         }
+    })
+
+    const onSubmit = (data) => {
+        mutation.mutate(data)
     }
     return (
         <section className='addcategory-wrapper'>

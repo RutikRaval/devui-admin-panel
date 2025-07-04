@@ -1,5 +1,8 @@
 .addcategory-wrapper {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .addcategory-wrapper .outer-wrapper {
   height: 100%;
