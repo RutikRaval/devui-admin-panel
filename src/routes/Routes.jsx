@@ -11,6 +11,7 @@ import ShowCategory from "../pages/Category/ShowCategory";
 import Sidebar from "../components/sidebar/Sidebar";
 import User from "../pages/User";
 import Setting from "../pages/Setting";
+import ShowLanguage from "../pages/Language/ShowLanguage";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
                 <Route path="addcategory" element={<AddCategory />} />
                 <Route path="addlanguage" element={<AddLanguage />} />
                 <Route path="showallcategory" element={<ShowCategory />} />
+                <Route path="showalllanguage" element={<ShowLanguage />} />
             </Route>
             <Route path="/unauthorised" element={<Unauthorised />} />
 

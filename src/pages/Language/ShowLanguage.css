@@ -1,4 +1,4 @@
-.showCategory-wrapper {
+.showLanguage-wrapper {
   padding: 40px 20px;
 }
 
@@ -7,13 +7,13 @@
   margin: auto;
 }
 
-.category-grid {
+.Language-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
 }
 
-.category-card {
+.Language-card {
   background: #ffffff;
   padding: 20px;
   border-radius: 16px;
@@ -24,12 +24,12 @@
   justify-content: space-between;
 }
 
-.category-card:hover {
+.Language-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-.category-name {
+.Language-name {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;

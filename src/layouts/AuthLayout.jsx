@@ -6,7 +6,7 @@ const AuthLayout = () => {
     <div className="d-flex align-items-center justify-content-center vh-100 " style={{
         background: "linear-gradient(135deg, #dee2ff, #ced4da)",
       }}>
-      <div className="border rounded shadow p-4 bg-white w-100" style={{ maxWidth: "400px" }}>
+      <div className="border rounded shadow p-4 w-100" style={{ maxWidth: "400px" }}>
         <Outlet />
       </div>
     </div>

@@ -6,3 +6,9 @@ export const addCategory = (data) => {
 export const showAllCategory = () => {
     return axiosInstance.get("category/getallcategory")
 }
+export const deleteCategory = (id) => {
+    return axiosInstance.delete(`category/deletecategory/${id}`)
+}
+export const updateCategory = ({id,name}) => {
+    return axiosInstance.put(`category/updatecategory/${id}`,{name})
+}
