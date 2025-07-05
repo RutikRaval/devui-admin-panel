@@ -8,9 +8,6 @@ import Unauthorised from "../pages/auth/Unauthorised";
 import AddCategory from "../pages/Category/AddCategory";
 import AddLanguage from "../pages/Language/AddLanguage";
 import ShowCategory from "../pages/Category/ShowCategory";
-import Sidebar from "../components/sidebar/Sidebar";
-import User from "../pages/User";
-import Setting from "../pages/Setting";
 import ShowLanguage from "../pages/Language/ShowLanguage";
 
 const router = createBrowserRouter(
@@ -18,9 +15,7 @@ const router = createBrowserRouter(
         <>
 
             <Route path="/dashboard" element={<Auth><MasterLayout /></Auth>}>
-                <Route path="home" element={<Dashboard />} />
-                <Route path="users" element={<User />} />
-                <Route path="settings" element={<Setting />} />
+                <Route index element={<Dashboard />} />
                 <Route path="addcategory" element={<AddCategory />} />
                 <Route path="addlanguage" element={<AddLanguage />} />
                 <Route path="showallcategory" element={<ShowCategory />} />

@@ -1,4 +1,4 @@
-import { useQueryClient } from "@tanstack/react-query";
+
 
 export const getToken = () => {
     const data = JSON.parse(sessionStorage.getItem("user"));
@@ -19,4 +19,5 @@ export const upperCaseLetter = (str) => {
         .split(' ')
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ')
-} 
+}
+

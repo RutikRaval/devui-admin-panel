@@ -1,3 +1,14 @@
 * {
   font-family: "Inter";
 }
+.master-collapsed{
+  margin-left: 220px;
+  transition: all 0.3s ease-in-out;
+
+}
+.master-open{
+  margin-left: 85px;
+  transition: all 0.3s ease-in-out;
+
+}
+
