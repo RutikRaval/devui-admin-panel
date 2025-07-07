@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from '../../services/store';
 import {
   HiOutlineFolder,
@@ -9,13 +9,15 @@ import {
   HiOutlineChevronRight,
   HiOutlineCode
 } from 'react-icons/hi';
+import { IoLogOutOutline, IoLanguage } from "react-icons/io5";
+import { RxComponent2 } from "react-icons/rx";
 import './sidebar.css';
 
 const Sidebar = () => {
   const { collapse, openSidebar, closeSidebar } = useStore();
   const [openSubmenus, setOpenSubmenus] = useState({});
 
-  // Combined collapse state (persistent or hover)
+  const navigate = useNavigate()
   const location = useLocation().pathname.split('/');
   const path = location[location.length - 1]
 
@@ -46,25 +48,29 @@ const Sidebar = () => {
       ]
     },
     {
-      id: 'component',
-      label: 'Component',
-      icon: <HiOutlineCode />,
-      subItems: [
-        { label: 'Add Component', path: '/dashboard/addcomponent' },
-        // { label: 'All Category', path: '/dashboard/showallcategory' }
-      ]
-    },
-    {
       id: 'language',
       label: 'Language',
-      icon: <HiOutlineGlobe />,
+      icon: <IoLanguage />,
       subItems: [
         { label: 'Add Language', path: '/dashboard/addlanguage' },
         { label: 'All Language', path: '/dashboard/showalllanguage' }
       ]
+    },
+    {
+      id: 'component',
+      label: 'Component',
+      icon: <RxComponent2 />,
+      subItems: [
+        { label: 'Add Component', path: '/dashboard/addcomponent' },
+        { label: 'All Component', path: '/dashboard/showallcomponent' }
+      ]
     }
   ];
-
+  const handleLogout = () => {
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('user')
+    navigate('/', { replace: true })
+  }
   return (
     <div
       className={`sidebar ${collapse ? 'expanded' : 'collapsed'}`}
@@ -84,7 +90,7 @@ const Sidebar = () => {
             {/* Parent item */}
             {item.subItems ? (
               <div
-                className={`sidebar-item ${path.includes(item.id)   ? 'active' : ''} parent-item`}
+                className={`sidebar-item ${path.includes(item.id) ? 'active' : ''} parent-item`}
                 onClick={() => collapse && toggleSubmenu(item.id)}
               >
                 <div className="item-icon">{item.icon}</div>
@@ -139,14 +145,14 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div
-        className="sidebar-toggle"
-        onClick={() => collapse ? closeSidebar() : openSidebar()}
-      >
-        <div className="toggle-icon">☰</div>
-        <div className={`toggle-label ${collapse ? 'visible' : 'hidden'}`}>
-          {collapse ? 'Collapse' : 'Expand'}
-        </div>
+      <div className="sidebar-toggle">
+        {
+          !collapse ? <IoLogOutOutline className='logout-icon' /> : (
+            <div className='w-100'>
+              <button className='w-100 btn border' onClick={handleLogout}>Logout</button>
+            </div>
+          )
+        }
       </div>
     </div>
   );

@@ -74,11 +74,6 @@
   /* Inherit text color */
 }
 
-/* .sidebar-item:hover {
-  background-color: #f8f8f8;
-} */
-
-/* Active state background color */
 .sidebar-item.active::before {
   content: "";
   height: 100%;
@@ -124,7 +119,6 @@
 }
 
 .submenu {
-  /* background-color: #f9f9f9; */
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -137,9 +131,7 @@
   transition: background-color 0.2s;
   font-size: 14px;
   text-decoration: none;
-  /* Remove underline */
   color: inherit;
-  /* Inherit text color */
   position: relative;
 }
 
@@ -158,19 +150,15 @@
 .sidebar-toggle {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 15px 20px;
   border-top: 1px solid #f0f0f0;
   cursor: pointer;
   transition: background-color 0.2s;
   text-decoration: none;
-  /* Remove underline */
   color: inherit;
-  /* Inherit text color */
 }
 
-/* .sidebar-toggle:hover {
-  background-color: #f8f8f8;
-} */
 
 .toggle-icon {
   font-size: 22px;
@@ -194,4 +182,11 @@
   width: 0;
   height: 0;
   overflow: hidden;
+}
+.logout-icon{
+  font-size: 25px;
+}
+.sidebar-toggle .btn:hover{
+  background-color: rgb(173, 173, 173);
+  color: white;
 }
