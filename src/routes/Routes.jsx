@@ -10,9 +10,9 @@ import AddLanguage from "../pages/Language/AddLanguage";
 import ShowCategory from "../pages/Category/ShowCategory";
 import ShowLanguage from "../pages/Language/ShowLanguage";
 import App from "../App";
-import AddComponent from "../components/addComponent/AddComponent";
 // import AddComponent from "../pages/Component/AddComponent";
 import ShowComponent from "../pages/Component/ShowComponent";
+import AddComponent from "../pages/Component/AddComponent";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
