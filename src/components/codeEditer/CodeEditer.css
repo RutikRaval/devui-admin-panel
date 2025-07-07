@@ -1,0 +1,55 @@
+/* src/CodeDisplay.css */
+
+.code-editer {
+  background-color: #272822; /* Matches monokai */
+  border-radius: 8px;
+  overflow: hidden;
+  color: #f8f8f2; /* Monokai text color */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+/* Header with colored "window buttons" like VS Code or Mac */
+.code-editer .editor-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.code-editer .window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.code-editer .control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.code-editer .control.close {
+  background-color: #ff5f56;
+}
+
+.code-editer .control.minimize {
+  background-color: #ffbd2e;
+}
+
+.code-editer .control.maximize {
+  background-color: #27c93f;
+}
+
+.code-editer .editor-body {
+  padding: 0 !important;
+}
+
+/* Make AceEditor fill available space */
+.code-editer .ace_editor {
+  width: 100% !important;
+  height: 300px !important;
+  font-family: 'Fira Code', monospace;
+  border-radius: 0;
+}

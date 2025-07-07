@@ -6,7 +6,8 @@ import {
   HiOutlineGlobe,
   HiOutlineHome,
   HiOutlineChevronDown,
-  HiOutlineChevronRight
+  HiOutlineChevronRight,
+  HiOutlineCode
 } from 'react-icons/hi';
 import './sidebar.css';
 
@@ -42,6 +43,15 @@ const Sidebar = () => {
       subItems: [
         { label: 'Add Category', path: '/dashboard/addcategory' },
         { label: 'All Category', path: '/dashboard/showallcategory' }
+      ]
+    },
+    {
+      id: 'component',
+      label: 'Component',
+      icon: <HiOutlineCode />,
+      subItems: [
+        { label: 'Add Component', path: '/dashboard/addcomponent' },
+        // { label: 'All Category', path: '/dashboard/showallcategory' }
       ]
     },
     {

@@ -9,6 +9,8 @@ import AddCategory from "../pages/Category/AddCategory";
 import AddLanguage from "../pages/Language/AddLanguage";
 import ShowCategory from "../pages/Category/ShowCategory";
 import ShowLanguage from "../pages/Language/ShowLanguage";
+import App from "../App";
+import AddComponent from "../components/addComponent/AddComponent";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,12 +22,14 @@ const router = createBrowserRouter(
                 <Route path="addlanguage" element={<AddLanguage />} />
                 <Route path="showallcategory" element={<ShowCategory />} />
                 <Route path="showalllanguage" element={<ShowLanguage />} />
+                <Route path="addcomponent" element={<AddComponent />} />
             </Route>
             <Route path="/unauthorised" element={<Unauthorised />} />
 
             <Route path="/" element={<AuthLayout />}>
                 <Route index element={<Login />} />
             </Route>
+            <Route path="/app" element={<App />}/>
 
         </>
     )
