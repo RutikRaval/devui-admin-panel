@@ -55,7 +55,7 @@ const ShowCategory = () => {
 
     return (
         <section className="showCategory-wrapper">
-            <div className="container">
+            <div className="">
                 <h3 className="text-center mb-4">All Categories</h3>
                 {isLoading && <div className="text-center">Loading...</div>}
                 {isError && <div className="text-center text-danger">Error loading data</div>}

@@ -1,0 +1,104 @@
+.showcomponent-wrapper {
+  padding: 25px;
+  background-color: #f9f9f9;
+}
+
+.component-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.component-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.badge {
+  background-color: #007bff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+.component-card:hover {
+  transform: translateY(-4px);
+}
+
+.component-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.component-header h5 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+
+
+.description {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.code-section {
+  margin-top: 1rem;
+  background-color: #f1f1f1;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.code-block {
+  margin-bottom: 1rem;
+}
+
+.code-block pre {
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.meta-info {
+  font-size: 1rem;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.btn-edit,
+.btn-delete {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}

@@ -6,6 +6,7 @@ import CodeEditor from "../../components/codeEditer/CodeEditer";
 import { showAllCategory } from "../../services/categoryApi";
 import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
 import { addComponent } from "../../services/componentApi";
+import './AddComponent.css'
 
 
 const AddComponent = () => {

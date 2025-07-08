@@ -44,12 +44,16 @@
 
 .code-editer .editor-body {
   padding: 0 !important;
+  max-height: 250px !important;
 }
 
 /* Make AceEditor fill available space */
 .code-editer .ace_editor {
   width: 100% !important;
-  height: 300px !important;
+  /* max-height: 250px !important; */
   font-family: 'Fira Code', monospace;
   border-radius: 0;
+}
+.code-editer .ace_content{
+  max-height: 250px !important;
 }
