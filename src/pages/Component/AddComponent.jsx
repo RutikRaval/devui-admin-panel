@@ -5,11 +5,12 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import CodeEditor from "../../components/codeEditer/CodeEditer";
 import { showAllCategory } from "../../services/categoryApi";
 import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
+import { addComponent } from "../../services/componentApi";
 
 
 const AddComponent = () => {
   const [codeSnippets, setCodeSnippets] = useState({ angular: '', react: '', html: '', css: '' });
-  const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm()
+  const { register,reset, handleSubmit, watch, formState: { errors, isValid } } = useForm()
   const [codeError, setCodeError] = useState('');
 
   const onSubmit = (data) => {
@@ -33,12 +34,14 @@ const AddComponent = () => {
         {language:'css',code:codeSnippets?.css}
       ],
     };
-    
+    mutation.mutate(body)
+    reset();
+    setCodeSnippets({ angular: '', react: '', html: '', css: '' })
   };
 
-  // const mutation=useMutation({
-  //   mutationFn:
-  // })
+  const mutation=useMutation({
+    mutationFn:addComponent 
+  })
 
   const { data: languages = [] } = useQuery({
     queryKey: ["languages"],
